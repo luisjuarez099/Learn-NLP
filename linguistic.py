@@ -1,7 +1,7 @@
 # linguistic.py
 
 import spacy
-from grammar_rules import past_verbs, present_verbs, gerunds, grammar_rules
+from grammar_rules import past_verbs, present_verbs, gerunds, grammar_rules, past_participle_verbs
 
 # Cargar el modelo de spaCy
 nlp = spacy.load("en_core_web_sm")
@@ -35,6 +35,14 @@ def is_gerund_or_present_participle_spacy(sentence):
             if token.lemma_ in gerunds or token.text in gerunds:
                 return True, f"'{token.text}' is a gerund or present participle verb."
     return False, "No gerund or present participle verbs found."
+
+def is_past_participle_spacy(sentence):
+    doc = nlp(sentence)
+    for token in doc:
+        if token.tag_ == "VBN":
+            return True, f"'{token.text}' is a past participle verb."
+    return False, "No past participle verbs found."
+
 
 def explain_grammar(rule_name):
     rule = grammar_rules.get(rule_name, None)

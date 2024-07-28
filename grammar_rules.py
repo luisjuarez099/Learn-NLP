@@ -37,6 +37,16 @@ gerunds = [
     "understanding", "waking", "wearing", "winning", "writing", "working", "talking", "using", "calling", "trying"
 ]
 
+past_participle_verbs = [
+    "gone", "seen", "played", "watched", "studied", "run", "walked", "eaten", "drunk", "slept",
+    "come", "bought", "brought", "built", "caught", "chosen", "done", "dug", "drawn", "dreamt",
+    "driven", "fallen", "felt", "found", "flown", "forgotten", "forgiven", "frozen", "gotten", "given",
+    "grown", "hung", "heard", "hidden", "hit", "held", "hurt", "kept", "known", "laid", "led",
+    "left", "lent", "let", "lost", "made", "meant", "met", "paid", "put", "read", "ridden",
+    "rung", "risen", "run", "said", "seen", "sold", "sent", "set", "shaken", "shone", "shot",
+    "sung", "sat", "slept", "spoken", "spent", "stood", "stolen", "swum", "taken", "taught",
+    "told", "thought", "thrown", "understood", "woken", "worn", "won", "written", "worked", "talked"
+]
 # Reglas gramaticales básicas
 grammar_rules = {
     "present_simple": {
@@ -48,6 +58,11 @@ grammar_rules = {
         "description": "Past simple is used for actions that happened at a specific time in the past.",
         "structure": "Subject + past form of the verb",
         "examples": ["I worked.", "She played soccer."]
+    },
+    "past_participle": {
+        "description": "Past participles are used for perfect tenses and passive voice.",
+        "structure": "Subject + auxiliary verb (have/has/had) + past participle",
+        "examples": ["I have worked.", "She has played soccer."]
     },
     "gerund_present_participle": {
         "description": "Gerunds act as nouns, present participles are used for continuous tenses.",

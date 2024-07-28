@@ -1,6 +1,6 @@
 # main.py
 
-from analizador import analyze_past_spacy, analyze_present_spacy, analyze_gerund_or_present_participle_spacy
+from analizador import analyze_past_spacy, analyze_present_spacy, analyze_gerund_or_present_participle_spacy, analyze_past_participle_spacy
 
 def main():
     # Menú para seleccionar las palabras a analizar
@@ -8,7 +8,8 @@ def main():
     print("1. Analyze present simple")
     print("2. Analyze past simple")
     print("3. Analyze gerund or present participle")
-    print("4. Run predefined tests")
+    print("4. Analyze past participle")
+    print("5. Run predefined tests")
 
     option = input("Select an option: ")
     if option == "1":
@@ -21,13 +22,18 @@ def main():
         data_words = input("Enter a sentence: ")
         print(analyze_gerund_or_present_participle_spacy(data_words))
     elif option == "4":
+        data_words = input("Enter a sentence: ")
+        print(analyze_past_participle_spacy(data_words))
+    elif option == "5":
         print(analyze_past_spacy("She played soccer last summer."))
         print()
         print(analyze_present_spacy("He plays soccer every summer."))
         print()
         print(analyze_gerund_or_present_participle_spacy("She is playing soccer right now."))
+        print()
+        print(analyze_past_participle_spacy("She has played soccer."))
     else:
-        print("Invalid option. Please select 1, 2, 3, or 4.")
+        print("Invalid option. Please select 1, 2, 3, 4 or 5.")
 
 if __name__ == "__main__":
     main()

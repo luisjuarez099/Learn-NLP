@@ -1,39 +1,37 @@
-# main.py
+import tensorflow as tf
+import spacy
+import numpy as np
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+import pickle
 
-from analizador import analyze_past_spacy, analyze_present_spacy, analyze_gerund_or_present_participle_spacy, analyze_past_participle_spacy
+# Cargar el modelo y tokenizer
+model = tf.keras.models.load_model('present_simple_model.keras')
 
-def main():
-    # Menú para seleccionar las palabras a analizar
-    print("Welcome to the sentence analyzer")
-    print("1. Analyze present simple")
-    print("2. Analyze past simple")
-    print("3. Analyze gerund or present participle")
-    print("4. Analyze past participle")
-    print("5. Run predefined tests")
+with open('tokenizer.pkl', 'rb') as handle:
+    tokenizer = pickle.load(handle)
 
-    option = input("Select an option: ")
-    if option == "1":
-        data_words = input("Enter a sentence: ")
-        print(analyze_present_spacy(data_words))
-    elif option == "2":
-        data_words = input("Enter a sentence: ")
-        print(analyze_past_spacy(data_words))
-    elif option == "3":
-        data_words = input("Enter a sentence: ")
-        print(analyze_gerund_or_present_participle_spacy(data_words))
-    elif option == "4":
-        data_words = input("Enter a sentence: ")
-        print(analyze_past_participle_spacy(data_words))
-    elif option == "5":
-        print(analyze_past_spacy("She played soccer last summer."))
-        print()
-        print(analyze_present_spacy("He plays soccer every summer."))
-        print()
-        print(analyze_gerund_or_present_participle_spacy("She is playing soccer right now."))
-        print()
-        print(analyze_past_participle_spacy("She has played soccer."))
+with open('max_len.pkl', 'rb') as handle:
+    max_len = pickle.load(handle)
+
+nlp = spacy.load('en_core_web_sm')
+
+def preprocess_text(text):
+    doc = nlp(text)
+    return ' '.join([token.lemma_ for token in doc if not token.is_stop])
+
+def predict(phrase):
+    processed_phrase = preprocess_text(phrase)
+    sequence = tokenizer.texts_to_sequences([processed_phrase])
+    padded_sequence = pad_sequences(sequence, maxlen=max_len)  # Use max_len for padding
+    prediction = model.predict(padded_sequence)
+    return prediction[0][0] > 0.5
+
+def evaluate_phrase(phrase):
+    if predict(phrase):
+        return "La frase está correctamente estructurada en presente simple."
     else:
-        print("Invalid option. Please select 1, 2, 3, 4 or 5.")
+        return "La frase tiene errores. Asegúrate de usar la estructura correcta: Sujeto + Verbo + Objeto."
 
-if __name__ == "__main__":
-    main()
+# Ejemplo de uso
+user_input = input("Ingrese una frase en presente simple: ")
+print(evaluate_phrase(user_input))

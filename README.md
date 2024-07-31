@@ -85,6 +85,13 @@ Estructura del Proyecto
 ![image](https://github.com/user-attachments/assets/2f1afaeb-4a84-43c2-8e46-c79446e47cf0)
 
 
+### Video de uso (no audio)
+
+[Muestra del uso del Sistema experto](https://github.com/luisjuarez099/Learn-NLP.git)
+
+
+
+
 
 # ADIOS!
 

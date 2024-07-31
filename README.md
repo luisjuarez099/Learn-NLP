@@ -87,7 +87,7 @@ Estructura del Proyecto
 
 ### Video de uso (no audio)
 
-[Muestra del uso del Sistema experto](https://github.com/luisjuarez099/Learn-NLP.git)
+[Muestra del uso del Sistema experto](https://youtu.be/meT2Ndt6mNc)
 
 
 

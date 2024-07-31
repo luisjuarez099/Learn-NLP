@@ -69,6 +69,23 @@ Estructura del Proyecto
 ![image](https://github.com/user-attachments/assets/134d93c4-8e6a-418c-8637-3d6b5ec61524)
 
 
+# Imagenes
+
+### Analizis de mi archivo CSV
+
+![image](https://github.com/user-attachments/assets/8383bd3a-6eef-49ef-a09e-8c4f538ba182)
+
+### Ingreso de la oracion en ```present simple```
+
+![image](https://github.com/user-attachments/assets/bb2f68a2-9626-487f-b94d-cf1dcfcb46d9)
+
+
+### Errores 
+
+![image](https://github.com/user-attachments/assets/2f1afaeb-4a84-43c2-8e46-c79446e47cf0)
+
+
+
 # ADIOS!
 
 ¡Gracias por utilizar este evaluador de frases en presente simple! Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto.

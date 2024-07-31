@@ -96,3 +96,4 @@ Estructura del Proyecto
 # ADIOS!
 
 ¡Gracias por utilizar este evaluador de frases en presente simple! Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto.
+Fue un Proyecto interesante para cierre de semestre, espero siguientes generacion de nuestro plantel puedan llevar basto conocimiento de una materia tan relevante en estos dias.
